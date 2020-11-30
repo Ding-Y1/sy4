@@ -27,6 +27,6 @@
     
     
 五、 核心代码 以下代码展示了Java如何读取文件，如何处理文件中的字符串，利用字节流来读取文件，以及用字符流来将字节转换为字符，并将字符流存储在字符型数组中，并结合数组下标来将处理好的字符赋值在动态字符串中。 public static StringBuffer ReadTxt(String path) { StringBuffer s = new StringBuffer(); // 读取文件内容 (输入流) try { FileInputStream out = new FileInputStream(path); InputStreamReader isr = new InputStreamReader(out); char[] chars = new char[9999999]; int ch = 0; int i = 0; while ((ch = isr.read()) != -1) { chars[i] = (char) ch; i++; } for (int j = 0; j < i; j++) { s.append(chars[j]); if ((j + 1) % 7 == 0 && (j + 1) % 2 == 0) { s.append("。" + "\n"); } if ((j + 1) % 7 == 0 && (j + 1) % 2 != 0) { s.append("，"); } } } catch (Exception e) { System.out.println("1"); } return s; } 
-六、 实验结果 
+六、 实验结果 https://github.com/Ding-Y1/sy4/blob/main/1.PNG
 
 七、 实验体会 本次实验主要难点在于文件的处理以及字与词的查询上，对异常处理更了解了。
